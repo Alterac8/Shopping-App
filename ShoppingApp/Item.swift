@@ -3,6 +3,7 @@ import Foundation
 import UIKit
 
 class Item {
+
     private var user: User
     private var itemName: String
     private var itemImage: UIImage?
@@ -14,6 +15,7 @@ class Item {
     private var buzzCollection: [String: BuzzEntry]?
     private var itemLikedBy: [User]?
     private var itemBoughtBy: [User]?
+    var change: Int?
     
     
     init(user: User, itemName: String, itemImage: UIImage?, itemSizes: [String]?, itemPrice: Double, itemDescription: String, itemCategory: String?) { //TODO

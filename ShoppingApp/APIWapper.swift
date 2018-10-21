@@ -150,6 +150,15 @@ class APIWrapper {
     func getItems(numItems: Int, callback: (Array<Item>)->()) {
         //GET /items {i}
     }
+
+    var items = [Item:String]()
+    func getItems(numItems: Int, callback: (Array<Item>)->()) {
+        //GET /items {i}
+    }
+    
+    //func getLikes(item: Item, callback: (Array<String>) -> ()) {
+        
+    //}
     
     
     //func getLikes(item: Item, callback: (Array<String>) -> ()) {

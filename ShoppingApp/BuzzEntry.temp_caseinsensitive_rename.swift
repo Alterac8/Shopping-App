@@ -8,7 +8,7 @@
 
 import Foundation
 
-class buzzEntry {
+class BuzzEntry {
     private var item: Item
     private var timeStamp: Date
     private var buzz: String
@@ -23,8 +23,7 @@ class buzzEntry {
         self.timeStamp = Date()
     }
     
-    func addLikes() -> Int {
-        self.likes += 1
+    func addLikes(buzzEntry: buzzEntry) -> Int {
         
     }
     
