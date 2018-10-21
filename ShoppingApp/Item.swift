@@ -5,12 +5,12 @@ import UIKit
 class Item {
 
     private var user: User
+    private let itemID: String
     private var itemName: String
     private var itemImage: UIImage?
     private var itemSizes: [String]?
     private var itemPrice: Double
     private var itemDescription: String
-    //private var id: String
     private var itemCategory: String?
     private var buzzCollection: [String: BuzzEntry]?
     private var itemLikedBy: [User]?
@@ -18,7 +18,8 @@ class Item {
     var change: Int?
     
     
-    init(user: User, itemName: String, itemImage: UIImage?, itemSizes: [String]?, itemPrice: Double, itemDescription: String, itemCategory: String?) { //TODO
+    init(itemID: String, user: User, itemName: String, itemImage: UIImage?, itemSizes: [String]?, itemPrice: Double, itemDescription: String, itemCategory: String?) {
+        self.itemID = itemID
         self.user = user
         self.itemName = itemName
         self.itemImage = itemImage
@@ -27,6 +28,12 @@ class Item {
         self.itemDescription = itemDescription
         self.itemCategory = itemCategory
         self.buzzCollection = [String: BuzzEntry]()
+        self.itemLikedBy = [User]()
+        self.itemBoughtBy = [User]()
+    }
+    
+    func getItemID() -> String {
+        return self.itemID
     }
     
     func getUser() -> User {
@@ -83,5 +90,9 @@ class Item {
     
     func setItemCategory(newItemCategory: String) {
         self.itemCategory = newItemCategory
+    }
+    
+    func getBuzzCollection(updatedBuzzCollection: [String: BuzzEntry]) {
+        self.buzzCollection = updatedBuzzCollection
     }
 }
