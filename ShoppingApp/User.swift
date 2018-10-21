@@ -1,9 +1,8 @@
-
-
 import Foundation
 class User: Hashable {
     private let username: String
-    init(username: String) {
+    
+    init(uid: Int, username: String) {
         self.username = username
     }
     
@@ -13,5 +12,9 @@ class User: Hashable {
     
     static func ==(lhs: User, rhs: User) -> Bool {
         return lhs.username == rhs.username
+    }
+    
+    var hashValue: Int {
+        return username.hashValue
     }
 }
